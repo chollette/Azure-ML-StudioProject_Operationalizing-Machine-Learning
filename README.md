@@ -55,8 +55,8 @@ https://www.youtube.com/watch?v=nTR-1-DI3Tg
 ## Standout Suggestions
 There are two standout modifications we made. 
 
-    •	First: We replicated the default profiler in Azure ML studio, which generates profiles of registered dataset, by exploring the Pandas profiling functionality. Provided 
+    •First: We replicated the default profiler in Azure ML studio, which generates profiles of registered dataset, by exploring the Pandas profiling functionality. Provided 
     below is a view of the correlation table generated between all variables in the dataset. 
 
-    • In order to explore the importance of features that contributed to the success of the best prediction model within the Azure ML Python SDK, the model expandability     
+    •In order to explore the importance of features that contributed to the success of the best prediction model within the Azure ML Python SDK, the model expandability     
     parameter was set to True in the AUTOML configuration settings. It allowed us to have a view of the top four features that contributed to the best model performance. 
