@@ -94,20 +94,21 @@ The Azure ML pipeline offers a coding possibility for an End-to-End Machine Lear
 ## Screen Recording
 For a demonstration of the capabilities of Azure ML Studio for the development of End-to-End ML production model, click the provided link to a screencast recording of the project. 
 
-                         https://www.youtube.com/watch?v=nTR-1-DI3Tg
+ [![Watch the video](https://www.youtube.com/watch?v=nTR-1-DI3Tg)
 
 ## Standout Suggestions
 There are two standout modifications mad: 
 
-    • First: We replicated the default profiler in Azure ML studio, which generates profiles of registered dataset, by exploring the Pandas profiling functionality. Provided 
+   • First: We replicated the default profiler in Azure ML studio, which generates profiles of registered dataset, by exploring the Pandas profiling functionality. Provided 
     below is a view of the correlation table generated between all variables in the dataset. 
-    
-    ![](images/EDA_BM_dataset.jpg)
+
+![](images/EDA_BM_dataset.jpg)
+  
 
     • In order to explore the importance of features that contributed to the success of the best prediction model within the Azure ML Python SDK, the model expandability     
     parameter was set to True in the AUTOML configuration settings. Even though this was not successful, here we show a view of the top four features that contributed to the     best model performance.
     
-    ![](images/bestmodel_explanation.jpg)
+  ![](images/bestmodel_explanation.jpg)
     
     
     
