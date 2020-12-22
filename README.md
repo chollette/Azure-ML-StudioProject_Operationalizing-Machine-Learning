@@ -56,7 +56,12 @@ A deployed model interacts with a production environment via HTTP API service in
 ### Step 5: Enable logging. 
 This can be achieved with Application Insight tool which helps to detect anomalies and visualize errors. Shown below are the enabled “Application Insight” and the generated logs, respectively.
 
+
+*Application Insight Enabled*
 ![](images/appinsight.jpg)
+
+
+*Logs.py Ouput*
 
 ![](images/log.py_output.jpg)
 
@@ -70,8 +75,13 @@ Azure ML has support for Swagger, which is a tool that makes it easy for interna
 ### Step 7: Consume model endpoints. 
 At this point, the consume model endpoint, which is created once the model is deployed, gives us the privilege to establish internal and external services interactions such as request and response to the HTTP API. We shall see in the below images the API JSON response from the deployed model and the HTTP API interaction performance results, respectively. 
 
+
+*Production Model Response*
+
 ![](images/json_ouput_of_model.jpg)
 
+
+*HTTP API interaction performance results with Benchmark*
 ![](images/benchmark.jpg)
 
 
