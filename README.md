@@ -9,6 +9,8 @@ The data for use in this project is the UCI Bank Marketing dataset on client res
 ## Project Architecture
 This project architecture is diagrammatically shown below.
 
+![](images/architecture.png)
+
 The individual steps to the realization of the Azure ML End-to-End solution deployment platform comprises of the following.
  
      1.	Authentication
@@ -26,31 +28,32 @@ These steps will be described subsequently, though with the exclusion of the Aut
 
 ## Key Steps
 
-##### Step 1: Upload and register the Bank Marketing dataset to workspace. 
+### Step 1: Upload and register the Bank Marketing dataset to workspace. 
 Provided is a screen shot of the registered dataset to the Azure data store.
 
 ![](images/registered_BM_dataset.jpg)
 
 
 
-##### Step 2: Create a new Automated ML Experiment. This usually takes about 30 minutes to 1 hour to complete, but once completed the experiment status will change from ‘Running’ to ‘Completed’. See below a sample view of Azure AUTOML completed run.
+### Step 2: Create a new Automated ML Experiment. 
+This usually takes about 30 minutes to 1 hour to complete, but once completed the experiment status will change from ‘Running’ to ‘Completed’. See below a sample view of Azure AUTOML completed run.
 
 ![](images/automl-completed.jpg)
 
 
-##### Step 3: Select the best model. 
+### Step 3: Select the best model. 
 The best model is typically the top most of all listed models the AUTOML applied for solving the given Bank Marketing problem. As we can see below, the Voting Ensemble is projected the best model. 
 
 ![](images/bestModel.jpg)
 
 
-##### Step 4: Deploy the best model. 
+### Step 4: Deploy the best model. 
 A deployed model interacts with a production environment via HTTP API service in order to receive input via a POST request and return the model’s predicted output. A sample of a succeeded deployed model can be seen below. 
 
 ![](images/succeeded_deployment.jpg)
 
 
-##### Step 5: Enable logging. 
+### Step 5: Enable logging. 
 This can be achieved with Application Insight tool which helps to detect anomalies and visualize errors. Shown below are the enabled “Application Insight” and the generated logs, respectively.
 
 ![](images/appinsight.jpg)
@@ -58,13 +61,13 @@ This can be achieved with Application Insight tool which helps to detect anomali
 ![](images/log.py_output.jpg)
 
 
-##### Step 6: Swagger Documentation. 
+### Step 6: Swagger Documentation. 
 Azure ML has support for Swagger, which is a tool that makes it easy for internal and external services to interact with the HTTP API of a deployed model for back-end implementation and client-side consumption. We show our project HTTP API methods and its response on swagger as follows.
 
 ![](images/swagger.jpg)
 
 
-##### Step 7: Consume model endpoints. 
+### Step 7: Consume model endpoints. 
 At this point, the consume model endpoint, which is created once the model is deployed, gives us the privilege to establish internal and external services interactions such as request and response to the HTTP API. We shall see in the below images the API JSON response from the deployed model and the HTTP API interaction performance results, respectively. 
 
 ![](images/json_ouput_of_model.jpg)
@@ -73,7 +76,7 @@ At this point, the consume model endpoint, which is created once the model is de
 
 
 
-##### Step 8: Create and publish a pipeline. 
+### Step 8: Create and publish a pipeline. 
 The Azure ML pipeline offers a coding possibility for an End-to-End Machine Learning pipeline using the Python SDK to achieve the same goal of creating, deploying (publishing) and consuming a production model. The processes are summarized with the below given images. 
 
 ![](images/pipelineCreated.jpg)
@@ -98,6 +101,13 @@ There are two standout modifications mad:
 
     • First: We replicated the default profiler in Azure ML studio, which generates profiles of registered dataset, by exploring the Pandas profiling functionality. Provided 
     below is a view of the correlation table generated between all variables in the dataset. 
+    
+    ![](images/EDA_BM_dataset.jpg)
 
     • In order to explore the importance of features that contributed to the success of the best prediction model within the Azure ML Python SDK, the model expandability     
-    parameter was set to True in the AUTOML configuration settings. It allowed us to have a view of the top four features that contributed to the best model performance. 
+    parameter was set to True in the AUTOML configuration settings. Even though this was not successful, here we show a view of the top four features that contributed to the     best model performance.
+    
+    ![](images/bestmodel_explanation.jpg)
+    
+    
+    
