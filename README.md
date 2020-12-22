@@ -79,16 +79,32 @@ At this point, the consume model endpoint, which is created once the model is de
 ### Step 8: Create and publish a pipeline. 
 The Azure ML pipeline offers a coding possibility for an End-to-End Machine Learning pipeline using the Python SDK to achieve the same goal of creating, deploying (publishing) and consuming a production model. The processes are summarized with the below given images. 
 
+*Pipeline created*
+
 ![](images/pipelineCreated.jpg)
+
+
+*Pipeline endpoint*
 
 ![](images/pipelineEndpoint2.jpg)
 
+
+*Data and module*
+
 ![](images/data_automlModule.jpg)
+
+
+*Published pipeline with active status*
 
 ![](images/pipeline_rest_endpoint.jpg)
 
+
+*Widget run in jupyter*
+
 ![](images/widgetRun.jpg)
 
+
+*Showing scheduled run in Azure*
 ![](images/scheduled_pipeline-rerun.jpg)
 
 ## Screen Recording
