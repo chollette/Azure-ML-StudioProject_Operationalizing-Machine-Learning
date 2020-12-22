@@ -94,7 +94,7 @@ The Azure ML pipeline offers a coding possibility for an End-to-End Machine Lear
 ## Screen Recording
 For a demonstration of the capabilities of Azure ML Studio for the development of End-to-End ML production model, click the provided link to a screencast recording of the project. 
 
- [![Watch the video](https://www.youtube.com/watch?v=nTR-1-DI3Tg)
+ ![](https://www.youtube.com/watch?v=nTR-1-DI3Tg)
 
 ## Standout Suggestions
 There are two standout modifications mad: 
