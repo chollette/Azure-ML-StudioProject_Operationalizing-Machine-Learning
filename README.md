@@ -16,7 +16,7 @@ For this classification task of predicting whether a user will subscribe, which 
 ## Project Architecture
 This project architecture is diagrammatically shown below.
 
-<img src="images/architecture.png" width="100" height="100">
+<img src="images/architecture.png" width="1200" height="1200">
 
 The individual steps to the realization of the Azure ML End-to-End solution deployment platform comprises of the following.
  
