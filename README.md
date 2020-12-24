@@ -185,10 +185,14 @@ There are two standout modifications made:
  ## Future work
 
 The following are the performance improvement strategies that can be explored to increase performance. They are:
-   •	Having noted the topmost performing models, we can create  a Hyperdrive run for tunning the hyper-parameters of the top best models using a Grid search or random search 
-     strategy. 
+
+   •	Having noted the top-most performing models, we can focus on creating a Hyperdrive run for tunning the hyper-parameters of the top-best models using a Grid search or   
+   random search strategy. 
+     
    •	A better metric such as AUC metric or the F1 metric can be used to evaluate performance because they are insensitive to class imbalance. 
+   
    •	Class balancing techniques such as up-sampling the smaller class, ‘no’, or down-sampling the larger class, ‘yes’; these methods can help to prevent overfitting. 
+   
    •	For the Azure Python SDK AutoML run, the cross-validation hyperparameter can be experimented to find the best cross-validation fold for the given data.
 
     
