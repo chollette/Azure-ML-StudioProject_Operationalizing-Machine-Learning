@@ -8,7 +8,7 @@ The data for use in this project is the UCI Bank Marketing dataset on client res
 
 **Online**: https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
-**This repository**: bankmarketing_train.csv
+**Local File**: bankmarketing_train.csv
 
 For this classification task of predicting whether a user will subscribe, which will either be a ‘yes’ or a ‘no’, the Voting Ensemble model emerged as the best performing model and serves as the production model which is deployed and consumed for client-side consumption.
 
@@ -39,7 +39,7 @@ These steps will be described subsequently, though with the exclusion of the Aut
 
 Click Datasets >> from local files >> Enter dataset details >> Click Browse to upload the “bankmarketing_train.csv dataset >> Select “Use header from the first file” >> Create dataset in Azure data store. Once successful the registered dataset will be resident in the workspaceblobstore as shown below.
 
-![](images/registered_BM_dataset.jpg)
+<img src="images/registered_BM_dataset.jpg" width="500" height="250">
 
 
 
@@ -50,7 +50,7 @@ The Automated ML (AutoML) run, once initiated, trains the Bank Marketing dataset
 Click “Automated ML” >> New Auto ML run >> Select dataset >> Enter Experiment name >> Select the Outcome variable >> Configure or Select Compute Cluster >> Select ML Task. In our case, the task selected is classification since the outcome variable of “yes” or “no” values.  Auto ML run usually takes about 30 minutes to 1 hour to complete, but once completed the experiment status changes from Running to Completed as shown in the below image.
 
 
-![](images/automl-completed.jpg)
+<img src="images/automl-completed.jpg" width="500" height="250">
 
 
 
@@ -59,7 +59,7 @@ Click “Automated ML” >> New Auto ML run >> Select dataset >> Enter Experimen
 
 Click Run ID >> Model to view all model runs. Typically, the top-most of the list is the best performing model of which the Voting Ensemble model emerged as the best performing of Auto ML run with a 92% accuracy as can be seen in the below image. 
 
-![](images/bestModel.jpg)
+<img src="images/bestModel.jpg" width="500" height="250">
 
 
 
@@ -71,7 +71,7 @@ A deployed model interacts with a production environment via HTTP API service in
 Click the “Voting Ensemble model” >> navigate to “deploy” button and click >> Enter Model Deployment name >> Select compute type >> Enable Authentication >> Click Deploy. We chose the Azure Container Instance (ACI) as the compute type and enabled key-based authentication. Once deployed, the status will show succeeded as given below.
 
 
-![](images/succeeded_deployment.jpg)
+<img src="images/succeeded_deployment.jpg" width="500" height="250">
 
 
 
@@ -83,12 +83,12 @@ The logging feature of the Azure diagnostic tool, which logs anomalies and error
 
 The enabled “Application Insights” from the deployed model endpoint.
 
-![](images/appinsight.jpg)
+<img src="images/appinsight.jpg" width="500" height="250">
 
 
 A successfully generated logs from the deployed model endpoint.
 
-![](images/log.py_output.jpg)
+<img src="images/log.py_output.jpg" width="500" height="250">
 
 
 
@@ -96,7 +96,7 @@ A successfully generated logs from the deployed model endpoint.
 ### Step 6: Swagger Documentation. 
 Azure ML has support for Swagger, a tool that makes it easy for internal and external services to interact with the HTTP API of a deployed model for back-end implementation and client-side consumption. In this repo, the swagger documentation is saved in a folder called “Swagger”. We show our production model HTTP API request and response methods on swagger as follows.
 
-![](images/swagger.jpg)
+<img src="images/swagger.jpg" width="500" height="250">
 
 
 
@@ -107,14 +107,14 @@ Once the model endpoint is consumed it provides us the privilege to establish in
 
 We created a JSON request Script, endpoint.py that is in this repo, which has two data points that represents bank customers who will either subscribe to the bank loan or not. From the “Model Response” as shown in the below image, the model outputs a “Yes” to the subscription for the first customer and a “No” for the second customer.  
 
-![](images/json_ouput_of_model.jpg)
+<img src="images/json_ouput_of_model.jpg" width="500" height="250">
 
 
 
 
 For measuring the model’s performance, we used a simple Apache command line which can be found in the “Benchmark.sh” file in this repo to test the interaction calls to the HTTP API. The data.json file is created as the endpoint.py file executed; then the key and scoring uri was gotten from the consumed model. A generated log of our production model’s performance with the benchmark file is shown in the below image as follows.
 
-![](images/benchmark.jpg)
+<img src="images/benchmark.jpg" width="500" height="250">
 
 
 
@@ -127,15 +127,15 @@ The Azure ML pipeline offers a coding possibility for an End-to-End Machine Lear
 #### Create a Pipeline
 Using the Python SDK, an Auto ML pipeline is created. Once created a “Run ID” will be generated with a “completed’ status as shown below. 
 
-![](images/pipelineCreated.jpg)
+<img src="images/pipelineCreated.jpg" width="500" height="250">
 
 To view the pipeline endpoint, navigate to the Endpoints >> Pipeline endpoints as shown below.
 
-![](images/pipelineEndpoint2.jpg)
+<img src="images/pipelineEndpoint2.jpg" width="500" height="250">
 
 As visualized from the Auto ML module with the Bank Marketing dataset, the Python SDK ML pipeline run also outputted the “Voting Ensemble” as the best model with a 92% accuracy as well.
 
-![](images/data_automlModule.jpg)
+<img src="images/data_automlModule.jpg" width="500" height="250">
 
 
 
@@ -144,15 +144,17 @@ As visualized from the Auto ML module with the Bank Marketing dataset, the Pytho
 
 Once created, the published pipeline will show an Active status and a rest endpoint. To view >> Pipeline >> Click the pipeline Run ID. As can be visualized from the below image, our published pipeline overview shows an active status and a REST endpoint.
 
-![](images/Pipeline_overview_Active.jpg)
+<img src="images/Pipeline_overview_Active.jpg" width="500" height="250">
+
 
 We can also re-run the ML pipeline in the Python SDK and show run using the “RunDetails Widget” as follows. 
 
-![](images/widgetRun.jpg)
+<img src="images/widgetRun.jpg" width="500" height="250">
+
 
 To view the pipeline re-run on the Azure Studio, navigate to the Endpoints >> Click on the newly created Pipeline >> Pipeline endpoints. This will show a running status as follows. 
 
-![](images/scheduled_pipeline-rerun.jpg)
+<img src="images/scheduled_pipeline-rerun.jpg" width="500" height="250">
 
 
 
@@ -169,13 +171,13 @@ There are two standout modifications made:
    • First: We replicated the default profiler in Azure ML studio, which generates profiles of registered dataset, by exploring the Pandas profiling functionality. Provided 
     below is a view of the correlation table generated between all variables in the dataset. 
 
-![](images/EDA_BM_dataset.jpg)
+<img src="images/EDA_BM_dataset.jpg" width="500" height="250">
   
 
     • In order to explore the importance of features that contributed to the success of the best prediction model within the Azure ML Python SDK, the model expandability     
     parameter was set to True in the AUTOML configuration settings. Even though this was not successful, here we show a view of the top four features that contributed to the     best model performance.
     
-![](images/bestmodel_explanation.jpg)
+<img src="images/bestmodel_explanation.jpg" width="500" height="250">
  
  
  
