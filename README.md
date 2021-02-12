@@ -169,6 +169,7 @@ To view the pipeline re-run on the Azure Studio, navigate to the Endpoints >> Cl
 For a demonstration of the capabilities of Azure ML Studio for the development of End-to-End ML production model, click the provided link to a screencast recording of the project. 
 
  https://youtu.be/2x7aVx0B78k
+ [![Azure ML Studio: Operationalizing Machine Learning](https://www.youtube.com/watch?v=2x7aVx0B78k&t=16s)](https://www.youtube.com/watch?v=2x7aVx0B78k&t=16s)
 
 ## Standout Suggestions
 
