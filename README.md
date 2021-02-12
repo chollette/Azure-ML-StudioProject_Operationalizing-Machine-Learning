@@ -1,14 +1,24 @@
 # Operationalizing Machine Learning
 
+
+# Table of Contents
+1. [Overview]()
+2. [Summary]()
+3. [Project Architecture]()
+4. [Key Steps]()
+5. [Screen Recording]()
+6. [Standout Suggestions]()
+7. [Future Work]()
+
 ## Overview
 This project is part of the Udacity Azure ML Nanodegree. There are two facets to this project. First, we will build a codeless configuration of a closed-based machine learning production model, deploy and consume it using AUTOML. Second, we will build an Azure ML pipeline using the Python SDK to achieve the same goal of creating, deploying (publishing) and consuming a production model. In this repo, the Python SDK codes is resident in "bank-marketing-automl-deployment(main).ipynb" notebook file. These two facets of the project, explores the Azure ML End-to-End solution platform for enabling other web services to interact with the deployed model.  
 
 ## Summary
 The data for use in this project is the UCI Bank Marketing dataset on client responses acquired through a direct call marketing campaign by a Portuguese banking Institution with the aim to access whether a client would subscribe for the bank term deposit given as a ‘yes’, or a ‘no’. Therefore, the problem suggests a binary classification problem where the goal is to predict if the client will subscribe a term deposit. The data can be found: 
 
-**Online**: https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+[Online](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv")
 
-**Local File**: bankmarketing_train.csv
+[Local File](bankmarketing_train.csv)
 
 For this classification task of predicting whether a user will subscribe, which will either be a ‘yes’ or a ‘no’, the Voting Ensemble model emerged as the best performing model and serves as the production model which is deployed and consumed for client-side consumption.
 
@@ -20,15 +30,15 @@ This project architecture is diagrammatically shown below.
 
 The individual steps to the realization of the Azure ML End-to-End solution deployment platform comprises of the following.
  
-     1.	Authentication
-     2.	Upload and Register Dataset
-     3.	Automated ML Experiment
-     4.	Deploy the best model
-     5.	Enable logging
-     6.	Swagger Documentation
-     7.	Consume model endpoints
-     8.	Create and publish a pipeline
-     9.	Documentation
+ 1. Authentication
+ 2. Upload and Register Dataset
+ 3. Automated ML Experiment
+ 4. Deploy the best model
+ 5. Enable logging
+ 6. Swagger Documentation
+ 7. Consume model endpoints
+ 8. Create and publish a pipeline
+ 9. Documentation
 
 These steps will be described subsequently, though with the exclusion of the Authentication and Documentation steps. The Authentication step is basically for creating a service principle which will enable role-based access control for exploring Azure resources, but the project is currently using the Udacity provided access. For the Documentation, this “ReadMe file” provides the details of this project’s Azure ML pipeline execution process.
  
@@ -118,8 +128,6 @@ For measuring the model’s performance, we used a simple Apache command line wh
 
 
 
-
-
 ### Step 8: Create and publish a pipeline. 
 
 The Azure ML pipeline offers a coding possibility for an End-to-End Machine Learning pipeline using the Python SDK. The processes are summarized:
@@ -136,8 +144,6 @@ To view the pipeline endpoint, navigate to the Endpoints >> Pipeline endpoints a
 As visualized from the Auto ML module with the Bank Marketing dataset, the Python SDK ML pipeline run also outputted the “Voting Ensemble” as the best model with a 92% accuracy as well.
 
 <img src="images/data_automlModule.jpg" width="500" height="250">
-
-
 
 
 #### Publish the Pipeline
@@ -181,19 +187,18 @@ There are two standout modifications made:
  
  
  
- 
  ## Future work
 
 The following are the performance improvement strategies that can be explored to increase performance. They are:
 
-   •	Having noted the top-most performing models, we can focus on creating a Hyperdrive run for tunning the hyper-parameters of the top-best models using a Grid search or   
+- Having noted the top-most performing models, we can focus on creating a Hyperdrive run for tunning the hyper-parameters of the top-best models using a Grid search or   
    random search strategy. 
      
-   •	A better metric such as AUC metric or the F1 metric can be used to evaluate performance because they are insensitive to class imbalance. 
+- A better metric such as AUC metric or the F1 metric can be used to evaluate performance because they are insensitive to class imbalance. 
    
-   •	Class balancing techniques such as up-sampling the smaller class, ‘no’, or down-sampling the larger class, ‘yes’; these methods can help to prevent overfitting. 
+- Class balancing techniques such as up-sampling the smaller class, ‘no’, or down-sampling the larger class, ‘yes’; these methods can help to prevent overfitting. 
    
-   •	For the Azure Python SDK AutoML run, the cross-validation hyperparameter can be experimented to find the best cross-validation fold for the given data.
+- For the Azure Python SDK AutoML run, the cross-validation hyperparameter can be experimented to find the best cross-validation fold for the given data.
 
     
     
