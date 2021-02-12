@@ -16,9 +16,9 @@ This project is part of the Udacity Azure ML Nanodegree. There are two facets to
 ## Summary
 The data for use in this project is the UCI Bank Marketing dataset on client responses acquired through a direct call marketing campaign by a Portuguese banking Institution with the aim to access whether a client would subscribe for the bank term deposit given as a ‘yes’, or a ‘no’. Therefore, the problem suggests a binary classification problem where the goal is to predict if the client will subscribe a term deposit. The data can be found: 
 
-[Online](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv")
+* [Online](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv")
 
-[Local File](bankmarketing_train.csv)
+* [Local File](bankmarketing_train.csv)
 
 For this classification task of predicting whether a user will subscribe, which will either be a ‘yes’ or a ‘no’, the Voting Ensemble model emerged as the best performing model and serves as the production model which is deployed and consumed for client-side consumption.
 
